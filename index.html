@@ -11,31 +11,29 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="bg-gradient-to-br from-slate-900 to-gray-800 text-white font-sans">
-  <header class="text-center py-12 bg-slate-950 shadow-md">
-    <div class="profile-container relative">
-      <img
-        src="images/profile.jpg"
-        alt="Profile of Sajid Alimahamad Shaikh"
-        onerror="this.src='https://via.placeholder.com/150';"
-        loading="lazy"
-        class="profile-img w-32 h-32 mx-auto rounded-full border-4 border-blue-400/30"
-      />
-    </div>
-    <h1 class="text-4xl font-bold mt-6">Sajid Alimahamad Shaikh</h1>
-    <p class="text-blue-400 text-lg">Full-Stack Java Developer</p>
-    <div class="contact-info flex justify-center gap-6 mt-6">
-      <a href="mailto:ss2727303@gmail.com" class="glass-button hover:text-blue-400" aria-label="Send email to Sajid"><i class="fas fa-envelope"></i></a>
-      <a href="tel:+918080929483" class="glass-button hover:text-blue-400" aria-label="Call Sajid"><i class="fas fa-phone"></i></a>
-      <a href="https://www.linkedin.com/in/sajid-shaikh-1a7300252" target="_blank" rel="noopener" class="glass-button hover:text-blue-400" aria-label="View Sajid's LinkedIn profile"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/sajidbaba1" target="_blank" rel="noopener" class="glass-button hover:text-blue-400" aria-label="View Sajid's GitHub profile"><i class="fab fa-github"></i></a>
+  <header class="text-center py-10 bg-slate-950 shadow-md">
+    <img
+      src="images/profile.jpg"
+      alt="Profile of Sajid Alimahamad Shaikh"
+      onerror="this.src='https://via.placeholder.com/150';"
+      loading="lazy"
+      class="profile-img w-32 h-32 mx-auto rounded-full border-4 border-blue-400"
+    />
+    <h1 class="text-4xl font-bold mt-4">Sajid Alimahamad Shaikh</h1>
+    <p class="text-blue-400">Full-Stack Java Developer</p>
+    <div class="contact-info flex justify-center gap-4 mt-4">
+      <a href="mailto:ss2727303@gmail.com" class="hover:text-blue-400" aria-label="Send email to Sajid"><i class="fas fa-envelope"></i></a>
+      <a href="tel:+918080929483" class="hover:text-blue-400" aria-label="Call Sajid"><i class="fas fa-phone"></i></a>
+      <a href="https://www.linkedin.com/in/sajid-shaikh-1a7300252" target="_blank" rel="noopener" class="hover:text-blue-400" aria-label="View Sajid's LinkedIn profile"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/sajidbaba1" target="_blank" rel="noopener" class="hover:text-blue-400" aria-label="View Sajid's GitHub profile"><i class="fab fa-github"></i></a>
     </div>
   </header>
 
-  <nav class="bg-gray-900/80 backdrop-blur-md shadow sticky top-0 z-50">
+  <nav class="bg-gray-900 shadow sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 py-3">
       <button
         id="nav-toggle"
-        class="md:hidden text-white focus:outline-none glass-button"
+        class="md:hidden text-white focus:outline-none"
         aria-label="Toggle navigation menu"
       >
         <i class="fas fa-bars text-2xl"></i>
@@ -44,47 +42,47 @@
         id="nav-menu"
         class="flex flex-col md:flex-row md:flex justify-center gap-4 mt-4 md:mt-0"
       >
-        <a href="#summary" class="glass-button text-white px-4 py-2 rounded">Summary</a>
-        <a href="#skills" class="glass-button text-white px-4 py-2 rounded">Skills</a>
-        <a href="#education" class="glass-button text-white px-4 py-2 rounded">Education</a>
-        <a href="#internships" class="glass-button text-white px-4 py-2 rounded">Internships</a>
-        <a href="#projects" class="glass-button text-white px-4 py-2 rounded">Projects</a>
-        <a href="#certifications" class="glass-button text-white px-4 py-2 rounded">Certifications</a>
-        <a href="#contact" class="glass-button text-white px-4 py-2 rounded">Contact</a>
+        <a href="#summary" class="text-white px-4 py-2 hover:bg-blue-600 rounded">Summary</a>
+        <a href="#skills" class="text-white px-4 py-2 hover:bg-blue-600 rounded">Skills</a>
+        <a href="#education" class="text-white px-4 py-2 hover:bg-blue-600 rounded">Education</a>
+        <a href="#internships" class="text-white px-4 py-2 hover:bg-blue-600 rounded">Internships</a>
+        <a href="#projects" class="text-white px-4 py-2 hover:bg-blue-600 rounded">Projects</a>
+        <a href="#certifications" class="text-white px-4 py-2 hover:bg-blue-600 rounded">Certifications</a>
+        <a href="#contact" class="text-white px-4 py-2 hover:bg-blue-600 rounded">Contact</a>
       </div>
     </div>
   </nav>
 
-  <main class="container max-w-6xl mx-auto px-4 py-12 space-y-16">
+  <main class="container max-w-6xl mx-auto px-4 py-10 space-y-16">
     <section id="summary" class="animate-fade-up">
       <h2 class="text-3xl font-bold border-b-4 border-blue-500 pb-2 mb-4">Brief Summary</h2>
-      <p class="glass-card p-6">Proficient in Java Spring Boot, REST API design, MySQL; experienced with Selenium, Postman, Git/GitHub, front-end techs, API integration, exception handling, and agile practices.</p>
+      <p>Proficient in Java Spring Boot, REST API design, MySQL; experienced with Selenium, Postman, Git/GitHub, front-end techs, API integration, exception handling, and agile practices.</p>
     </section>
 
     <section id="skills" class="animate-fade-up">
       <h2 class="text-3xl font-bold border-b-4 border-blue-500 pb-2 mb-4">Key Skills</h2>
-      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 list-none">
-        <li class="glass-card p-4">Java · Spring Boot · Hibernate · JPA</li>
-        <li class="glass-card p-4">MySQL · MongoDB · REST API</li>
-        <li class="glass-card p-4">HTML · CSS · JavaScript · React</li>
-        <li class="glass-card p-4">Postman · Selenium · Git/GitHub</li>
-        <li class="glass-card p-4">Python3 · JavaFX · Docker</li>
-        <li class="glass-card p-4">Problem Solving · MVC · AWS</li>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 list-disc list-inside">
+        <li>Java · Spring Boot · Hibernate · JPA</li>
+        <li>MySQL · MongoDB · REST API</li>
+        <li>HTML · CSS · JavaScript · React</li>
+        <li>Postman · Selenium · Git/GitHub</li>
+        <li>Python3 · JavaFX · Docker</li>
+        <li>Problem Solving · MVC · AWS</li>
       </ul>
     </section>
 
     <section id="education" class="animate-fade-up">
       <h2 class="text-3xl font-bold border-b-4 border-blue-500 pb-2 mb-4">Education</h2>
       <div class="space-y-4">
-        <div class="glass-card p-6">
+        <div class="card bg-gray-800 p-4 rounded shadow">
           <strong>Dr. D. Y. Patil Institute of Technology</strong><br />
           B.E. Computer Engineering — CGPA: 7.59
         </div>
-        <div class="glass-card p-6">
+        <div class="card bg-gray-800 p-4 rounded shadow">
           <strong>Shri Chhatrapati Shivaji Mahavidyalaya</strong><br />
           12th — 81.33%
         </div>
-        <div class="glass-card p-6">
+        <div class="card bg-gray-800 p-4 rounded shadow">
           <strong>New English School, Madewadgaon</strong><br />
           10th — 84.60%
         </div>
@@ -94,17 +92,17 @@
     <section id="internships" class="animate-fade-up">
       <h2 class="text-3xl font-bold border-b-4 border-blue-500 pb-2 mb-4">Internships</h2>
       <div class="grid md:grid-cols-2 gap-6">
-        <div class="glass-card p-6">
+        <div class="card bg-gray-800 p-5 rounded-lg shadow">
           <h3 class="text-xl font-semibold">Gamma Prep</h3>
           <p><em>Java Full-Stack Developer (May–Jun 2024)</em></p>
           <p>Worked with Java, Spring Boot, React, API & DB integration.</p>
         </div>
-        <div class="glass-card p-6">
+        <div class="card bg-gray-800 p-5 rounded-lg shadow">
           <h3 class="text-xl font-semibold">Tech Octanet</h3>
           <p><em>Java Developer (Dec 2023–Feb 2024)</em></p>
           <p>Built backend modules, file handling, JDBC white-box coding.</p>
         </div>
-        <div class="glass-card p-6">
+        <div class="card bg-gray-800 p-5 rounded-lg shadow">
           <h3 class="text-xl font-semibold">CODTECH IT SOLUTIONS</h3>
           <p><em>Full-Stack Developer (Dec 2023–Jan 2024)</em></p>
           <p>Worked on multithreading, streams, frontend integration.</p>
@@ -115,55 +113,52 @@
     <section id="projects" class="animate-fade-up">
       <h2 class="text-3xl font-bold border-b-4 border-blue-500 pb-2 mb-4">Projects</h2>
       <div class="space-y-4">
-        <div class="glass-card p-6">
+        <div class="card bg-gray-800 p-4 rounded shadow">
           <h3 class="text-lg font-semibold">Employee Management System</h3>
           <p>Spring Boot · MySQL · REST API · Maven</p>
         </div>
-        <div class="glass-card p-6">
+        <div class="card bg-gray-800 p-4 rounded shadow">
           <h3 class="text-lg font-semibold">Online Bookstore Web App</h3>
           <p>Spring Boot · Hibernate · MySQL</p>
         </div>
-        <div class="glass-card p-6">
+        <div class="card bg-gray-800 p-4 rounded shadow">
           <h3 class="text-lg font-semibold">B2B Multivendor Web App</h3>
-          <a href="https://github.com/sajidbaba1/B2B-E-Commeerce-Multivendor-Web-Application" target="_blank" rel="noopener" class="text-blue-400 hover:underline">GitHub Repository</a>
+          <a href="https://github.com/sajidbaba1/B2B-E-Commeerce-Multivendor-Web-Application" target="_blank" rel="noopener" class="text-blue-400">GitHub Repository</a>
         </div>
-        <div class="glass-card p-6">
+        <div class="card bg-gray-800 p-4 rounded shadow">
           <h3 class="text-lg font-semibold">Student Management System</h3>
-          <a href="https://github.com/sajidbaba1/Student-Management-System-plus" target="_blank" rel="noopener" class="text-blue-400 hover:underline">GitHub Repository</a>
+          <a href="https://github.com/sajidbaba1/Student-Management-System-plus" target="_blank" rel="noopener" class="text-blue-400">GitHub Repository</a>
         </div>
       </div>
     </section>
 
     <section id="certifications" class="animate-fade-up">
       <h2 class="text-3xl font-bold border-b-4 border-blue-500 pb-2 mb-4">Certifications</h2>
-      <ul class="list-none space-y-4">
-        <li class="glass-card p-4">Java 8 – DurgaSoft</li>
-        <li class="glass-card p-4">Full-Stack Web Dev – Apna College</li>
-        <li class="glass-card p-4">Spring Boot – CodeMasters Academy</li>
-        <li class="glass-card p-4">API Testing – DevTest Labs</li>
-        <li class="glass-card p-4">Agile Testing & Automation</li>
-        <li class="glass-card p-4">GitHub for DevOps</li>
-        <li class="glass-card p-4">SQL Foundation – Microsoft</li>
-        <li class="glass-card p-4">Web Design – HTML & CSS</li>
-        <li class="glass-card p-4">MS Office Suite Certification</li>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Java 8 – DurgaSoft</li>
+        <li>Full-Stack Web Dev – Apna College</li>
+        <li>Spring Boot – CodeMasters Academy</li>
+        <li>API Testing – DevTest Labs</li>
+        <li>Agile Testing & Automation</li>
+        <li>GitHub for DevOps</li>
+        <li>SQL Foundation – Microsoft</li>
+        <li>Web Design – HTML & CSS</li>
+        <li>MS Office Suite Certification</li>
       </ul>
     </section>
 
     <section id="contact" class="animate-fade-up">
-      <h2 class="text-3xl font-bold border-b-4 border-blue-500 pb-2 mb-4">Contact</h2>
-      <div class="glass-card p-6">
-        <p class="mb-2">📍 Sant Tukaram Nagar, Pimpri-Chinchwad, Pune — 411018</p>
-        <p class="mb-2">📞 +91-80809-29483</p>
-        <p class="mb-2">📧 <a href="mailto:ss2727303@gmail.com" class="text-blue-400 hover:underline">ss2727303@gmail.com</a></p>
-        <p class="mb-2">🔗 <a href="https://github.com/sajidbaba1" target="_blank" rel="noopener" class="text-blue-400 hover:underline">GitHub</a> · <a href="https://www.linkedin.com/in/sajid-shaikh-1a7300252" target="_blank" rel="noopener" class="text-blue-400 hover:underline">LinkedIn</a></p>
-      </div>
+      <h2 class="text-3xl font-bold border-b-4 border-blue-500 pb-2 mb-4">Contactಸ
+        <p class="mb-1">📍 Sant Tukaram Nagar, Pimpri-Chinchwad, Pune — 411018</p>
+        <p class="mb-1">📞 +91-80809-29483</p>
+        <p class="mb-1">📧 <a href="mailto:ss2727303@gmail.com" class="text-blue-400">ss2727303@gmail.com</a></p>
+        <p class="mb-1">🔗 <a href="https://github.com/saj自由
     </section>
   </main>
 
-  <footer class="text-center py-8 bg-slate-950/80 backdrop-blur-md text-sm text-gray-400">
+  <footer class="text-center py-6 bg-slate-950 text-sm text-gray-400">
     © 2025 Sajid Alimahamad Shaikh. All rights reserved.
   </footer>
-
-  <script src="main.js"></script>
 </body>
-</html>
+<script src="script.js"></script>
+        </html>
