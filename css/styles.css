@@ -13,18 +13,18 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Smooth transitions globally */
 a,
 nav a,
-.card,
+.glass-button,
+.glass-card,
 header,
 footer {
   transition: all 0.4s ease-in-out;
-}
-
-a {
-  color: #3b82f6;
-  text-decoration: none;
 }
 
 a:focus,
@@ -33,63 +33,97 @@ button:focus {
   outline-offset: 2px;
 }
 
+/* Glassmorphism for buttons */
+.glass-button {
+  background: rgba(59, 130, 246, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-button:hover {
+  background: rgba(59, 130, 246, 0.2);
+  transform: scale(1.05);
+}
+
+.glass-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(147, 197, 253, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.glass-button:hover::before {
+  width: 200px;
+  height: 200px;
+}
+
+/* Glassmorphism for cards */
+.glass-card {
+  background: rgba(31, 41, 55, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
+}
+
+.glass-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  background: rgba(31, 41, 55, 0.8);
+}
+
 /* Header */
 header {
   background: #0f172a;
-  text-align: center;
-  padding: 2rem 1rem;
-  border-bottom: 5px solid #3b82f6;
+  padding: 3rem 1rem;
+  border-bottom: 5px solid rgba(59, 130, 246, 0.3);
+}
+
+/* Profile picture with water drop effect */
+.profile-container {
+  position: relative;
+  width: 128px;
+  height: 128px;
+  margin: 0 auto;
 }
 
 .profile-img {
-  width: 128px;
-  height: 128px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #3b82f6;
-  margin-bottom: 1rem;
+  border: 4px solid rgba(59, 130, 246, 0.3);
   box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
-  animation: ripple 3s infinite ease-in-out;
+  animation: float 6s ease-in-out infinite;
 }
 
-.contact-info a {
-  margin: 0.3rem;
-  display: inline-block;
-  color: #e0f7fa;
-}
-
-.contact-info a:hover {
-  transform: scale(1.1);
-  color: #93c5fd;
+.profile-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: water-drop 4s infinite ease-in-out;
 }
 
 /* Navigation */
 nav {
-  background: #111827;
-  border-bottom: 5px solid #3b82f6;
-}
-
-nav a {
-  padding: 1rem;
-  font-weight: bold;
-  color: #e0f7fa;
-  position: relative;
-}
-
-nav a::after {
-  content: '';
-  position: absolute;
-  bottom: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0%;
-  height: 3px;
-  background: #93c5fd;
-  transition: width 0.3s;
-}
-
-nav a:hover::after {
-  width: 60%;
+  background: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 5px solid rgba(59, 130, 246, 0.3);
 }
 
 #nav-toggle {
@@ -99,8 +133,18 @@ nav a:hover::after {
 }
 
 #nav-menu {
-  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(17, 24, 39, 0.95);
+  backdrop-filter: blur(10px);
   flex-direction: column;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 1rem;
+  display: none;
+  z-index: 40;
 }
 
 #nav-menu.active {
@@ -109,72 +153,72 @@ nav a:hover::after {
 
 @media (min-width: 768px) {
   #nav-menu {
-    display: flex;
+    position: static;
+    background: none;
+    backdrop-filter: none;
     flex-direction: row;
+    max-height: none;
+    overflow-y: visible;
+    padding: 0;
+    display: flex;
   }
 }
 
 /* Container */
 .container {
   max-width: 1280px;
-  margin: 2rem auto;
+  margin: 3rem auto;
   padding: 0 1rem;
 }
 
 /* Sections */
 section {
-  margin-bottom: 2.5rem;
+  margin-bottom: 4rem;
   animation: fade-up 1s ease forwards;
   opacity: 0;
 }
 
 h2 {
   font-size: 1.875rem;
-  margin-bottom: 0.5rem;
-  border-bottom: 3px solid #3b82f6;
+  margin-bottom: 1rem;
+  border-bottom: 4px solid #3b82f6;
   display: inline-block;
   color: #f3f4f6;
 }
 
-/* Lists */
-ul {
-  list-style-type: disc;
-  margin-left: 1.5rem;
-}
-
-/* Cards */
-.card {
-  background: #1f2937;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-8px) scale(1.02);
-}
-
 /* Footer */
 footer {
-  background: #0f172a;
-  text-align: center;
-  color: #9ca3af;
-  padding: 1rem;
-  border-top: 5px solid #3b82f6;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-top: 5px solid rgba(59, 130, 246, 0.3);
 }
 
 /* Animations */
-@keyframes ripple {
+@keyframes float {
   0% {
-    box-shadow: 0 0 0px rgba(59, 130, 246, 0.4);
+    transform: translateY(0);
   }
   50% {
-    box-shadow: 0 0 25px rgba(59, 130, 246, 0.8);
+    transform: translateY(-12px);
   }
   100% {
-    box-shadow: 0 0 0px rgba(59, 130, 246, 0.4);
+    transform: translateY(0);
+  }
+}
+
+@keyframes water-drop {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
   }
 }
 
@@ -186,5 +230,12 @@ footer {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Fallback for browsers without backdrop-filter */
+@supports not (backdrop-filter: blur(10px)) {
+  .glass-button, .glass-card, nav, #nav-menu, footer {
+    background: rgba(31, 41, 55, 0.9);
   }
 }
