@@ -1,243 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sajid Alimahamad Shaikh | Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         html, body {
             height: auto;
-            overflow-y: auto;
             scroll-behavior: smooth;
             touch-action: manipulation;
             -webkit-overflow-scrolling: touch;
         }
 
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://www.transparenttextures.com/patterns/watercolor.png');
-            opacity: 0.03;
-            z-index: -1;
+        body {
+            background: linear-gradient(135deg, #1e3a8a, #1e293b);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
         }
 
-        .water-ripple {
+        .hero-bg {
+            background: url('https://images.unsplash.com/photo-1549921296-3a724e3efb69?auto=format&fit=crop&w=1470&q=80') no-repeat center center;
+            background-size: cover;
             position: relative;
             overflow: hidden;
         }
 
-        .water-ripple:after {
-            content: "";
+        .hero-bg::before {
+            content: '';
             position: absolute;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 10.01%);
-            background-size: 10% 10%;
-            animation: ripple 8s infinite linear;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
         }
 
-        @keyframes ripple {
-            0% { transform: translate(-50%, -50%) scale(0.9); }
-            100% { transform: translate(-50%, -50%) scale(1.1); }
+        .hero-content {
+            position: relative;
+            z-index: 2;
         }
 
-        .animate-float {
-            animation: floaty 6s ease-in-out infinite;
+        .profile-img {
+            transition: transform 0.3s ease;
         }
 
-        @keyframes floaty {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        .profile-img:hover {
+            transform: scale(1.05) rotate(2deg);
         }
 
         .glass-card {
-            backdrop-filter: blur(5px);
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .glass-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .nav-link {
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: #2563eb;
+            color: #fff !important;
+        }
+
+        .animate-slide-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideIn 0.5s forwards;
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            border-bottom: 3px solid #3b82f6;
+        }
+
+        .social-icon {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2);
+            color: #3b82f6 !important;
+        }
+
+        footer {
+            background: #0f172a;
         }
     </style>
 </head>
-
-<body class="bg-gradient-to-br from-slate-900 to-gray-800 text-white font-sans water-ripple">
+<body>
     <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
 
-    <header class="relative text-center py-10 bg-slate-950 shadow-md">
-        <div class="absolute inset-0 -z-10">
-            <img src="https://images.unsplash.com/photo-1549921296-3a724e3efb69?auto=format&fit=crop&w=1470&q=80" alt="Background" class="w-full h-full object-cover opacity-10" />
-        </div>
-        <img src="images/profile.jpg" alt="Profile" class="w-32 h-32 mx-auto rounded-full border-4 border-blue-400 animate-float" />
-        <h1 class="text-4xl font-bold mt-4">Sajid Alimahamad Shaikh</h1>
-        <p class="text-blue-400 text-lg font-semibold">Full‑Stack Developer</p>
-        <div class="flex justify-center gap-6 mt-4 text-2xl">
-            <a href="mailto:ss2727303@gmail.com" class="hover:text-blue-400 sound-vibrate" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            <a href="tel:+918080929483" class="hover:text-blue-400 sound-vibrate" aria-label="Phone"><i class="fas fa-phone"></i></a>
-            <a href="https://www.linkedin.com/in/sajid-shaikh-1a7300252" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 sound-vibrate" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/sajidbaba1" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 sound-vibrate" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    <header class="hero-bg py-5">
+        <div class="container hero-content text-center py-5">
+            <img src="images/profile.jpg" alt="Profile" class="profile-img rounded-circle border border-4 border-primary shadow-lg mb-4" width="150" height="150" />
+            <h1 class="display-4 fw-bold">Sajid Alimahamad Shaikh</h1>
+            <p class="lead text-primary fw-semibold">Full-Stack Developer</p>
+            <div class="d-flex justify-content-center gap-4 mt-4">
+                <a href="mailto:ss2727303@gmail.com" class="social-icon text-white sound-vibrate" aria-label="Email"><i class="fas fa-envelope fa-2x"></i></a>
+                <a href="tel:+918080929483" class="social-icon text-white sound-vibrate" aria-label="Phone"><i class="fas fa-phone fa-2x"></i></a>
+                <a href="https://www.linkedin.com/in/sajid-shaikh-1a7300252" target="_blank" rel="noopener noreferrer" class="social-icon text-white sound-vibrate" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="https://github.com/sajidbaba1" target="_blank" rel="noopener noreferrer" class="social-icon text-white sound-vibrate" aria-label="GitHub"><i class="fab fa-github fa-2x"></i></a>
+            </div>
         </div>
     </header>
 
-    <nav class="bg-gray-900 shadow sticky top-0 z-50 flex justify-center flex-wrap py-3">
-        <a href="#summary" class="text-white px-4 py-2 hover:bg-blue-600 transition rounded sound-vibrate">Summary</a>
-        <a href="#skills" class="text-white px-4 py-2 hover:bg-blue-600 transition rounded sound-vibrate">Skills</a>
-        <a href="#education" class="text-white px-4 py-2 hover:bg-blue-600 transition rounded sound-vibrate">Education</a>
-        <a href="#internships" class="text-white px-4 py-2 hover:bg-blue-600 transition rounded sound-vibrate">Internships</a>
-        <a href="#projects" class="text-white px-4 py-2 hover:bg-blue-600 transition rounded sound-vibrate">Projects</a>
-        <a href="#certifications" class="text-white px-4 py-2 hover:bg-blue-600 transition rounded sound-vibrate">Certifications</a>
-        <a href="#contact" class="text-white px-4 py-2 hover:bg-blue-600 transition rounded sound-vibrate">Contact</a>
-    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-3 col-lg-2 sidebar bg-dark p-3 d-none d-md-block">
+                <div class="nav flex-column">
+                    <a href="#summary" class="nav-link text-white py-2 px-3 rounded sound-vibrate">Summary</a>
+                    <a href="#skills" class="nav-link text-white py-2 px-3 rounded sound-vibrate">Skills</a>
+                    <a href="#education" class="nav-link text-white py-2 px-3 rounded sound-vibrate">Education</a>
+                    <a href="#internships" class="nav-link text-white py-2 px-3 rounded sound-vibrate">Internships</a>
+                    <a href="#projects" class="nav-link text-white py-2 px-3 rounded sound-vibrate">Projects</a>
+                    <a href="#certifications" class="nav-link text-white py-2 px-3 rounded sound-vibrate">Certifications</a>
+                    <a href="#contact" class="nav-link text-white py-2 px-3 rounded sound-vibrate">Contact</a>
+                </div>
+            </nav>
+            <main class="col-md-9 col-lg-10 px-4 py-5">
+                <section id="summary" class="mb-5 animate-slide-in">
+                    <h2 class="h2 fw-bold section-title pb-2 mb-4">Brief Summary</h2>
+                    <p class="lead">Proficient in Java Spring Boot, REST API design, and MySQL, with extensive experience in Selenium, Postman, and Git/GitHub. Skilled in front-end technologies, API integration, exception handling, and agile methodologies, delivering robust and scalable full-stack solutions.</p>
+                </section>
 
-    <main class="max-w-6xl mx-auto px-4 py-10 space-y-16">
-        <section id="summary">
-            <h2 class="text-3xl font-bold border-b-4 border-blue-500 pb-2 mb-4">Brief Summary</h2>
-            <p>Proficient in Java Spring Boot, REST API design, MySQL; experienced with Selenium, Postman, Git/GitHub,
-                front‑end techs, API integration, exception handling, and agile practices.</p>
+                <section id="skills" class="mb-5 animate-slide-in" style="animation-delay: 0.1s;">
+                    <h2 class="h2 fw-bold section-title pb-2 mb-4">Key Skills</h2>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-transparent text-white">Java · Spring Boot · Hibernate · JPA</li>
+                        <li class="list-group-item bg-transparent text-white">MySQL · MongoDB · REST API</li>
+                        <li class="list-group-item bg-transparent text-white">HTML · CSS · JavaScript · React</li>
+                        <li class="list-group-item bg-transparent text-white">Postman · Selenium · Git/GitHub</li>
+                        <li class="list-group-item bg-transparent text-white">Python3 · JavaFX · Docker</li>
+                        <li class="list-group-item bg-transparent text-white">Problem Solving · MVC · AWS</li>
+                    </ul>
+                </section>
+
+                <section id="education" class="mb-5 animate-slide-in" style="animation-delay: 0.2s;">
+                    <h2 class="h2 fw-bold section-title pb-2 mb-4">Education</h2>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card glass-card p-4">
+                                <h3 class="h5 fw-semibold">Dr. D. Y. Patil Institute of Technology</h3>
+                                <p>B.E. Computer Engineering — CGPA: 9.11</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card glass-card p-4">
+                                <h3 class="h5 fw-semibold">Shri Chhatrapati Shivaji Mahavidyalaya</h3>
+                                <p>12th — 81.33%</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card glass-card p-4">
+                                <h3 class="h5 fw-semibold">New English School, Madewadgaon</h3>
+                                <p>10th — 84.60%</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="internships" class="mb-5 animate-slide-in" style="animation-delay: 0.3s;">
+                    <h2 class="h2 fw-bold section-title pb-2 mb-4">Internships</h2>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card glass-card p-4">
+                                <h3 class="h5 fw-semibold">Gamma Prep</h3>
+                                <p class="text-muted"><em>Java Full-Stack Developer (May–Jun 2025)</em></p>
+                                <p>Developed full-stack applications using Java, Spring Boot, React, and integrated APIs with databases.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card glass-card p-4">
+                                <h3 class="h5 fw-semibold">Tech Octanet</h3>
+                                <p class="text-muted"><em>Java Developer (Dec–Feb 2025)</em></p>
+                                <p>Built backend modules with Java, focusing on file handling and JDBC white-box coding.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card glass-card p-4">
+                                <h3 class="h5 fw-semibold">CODTECH IT SOLUTIONS</h3>
+                                <p class="text-muted"><em>Full-Stack Developer (Dec–Jan 2025)</em></p>
+                                <p>Contributed to multithreading, streams, and seamless frontend-backend integration.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="projects" class="mb-5 animate-slide-in" style="animation-delay: 0.4s;">
+                    <h2 class="h2 fw-bold section-title pb-2 mb-4">Projects</h2>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card glass-card p-4">
+                                <h3 class="h5 fw-semibold">Employee Management System</h3>
+                                <p>Spring Boot · MySQL · REST API · Maven</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card glass-card p-4">
+                                <h3 class="h5 fw-semibold">Online Bookstore Web App</h3>
+                                <p>Spring Boot · Hibernate · MySQL</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card glass-card p-4">
+                                <h3 class="h5 fw-semibold">B2B Multivendor Web App</h3>
+                                <p><a href="https://github.com/sajidbaba1/B2B-E-Commeerce-Multivendor-Web-Application" target="_blank" rel="noopener noreferrer" class="text-primary">GitHub Repository</a></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card glass-card p-4">
+                                <h3 class="h5 fw-semibold">Fictional University – Educational Web App</h3>
+                                <p>React.js · Tailwind CSS · Educational Platform</p>
+                                <p><a href="https://precious-bombolone-f41eb5.netlify.app/" target="_blank" rel="noopener noreferrer" class="text-primary">Live Demo</a></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card glass-card p-4">
+                                <h3 class="h5 fw-semibold">Student Management System</h3>
+                                <p><a href="https://github.com/sajidbaba1/Student-Management-System-plus" Target="_blank" rel="noopener noreferrer" class="text-primary">GitHub Repository</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="certifications" class="mb-5 animate-slide-in" style="animation-delay: 0.5s;">
+                    <h2 class="h2 fw-bold section-title pb-2 mb-4">Certifications</h2>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-transparent text-white">Java 8 – DurgaSoft</li>
+                        <li class="list-group-item bg-transparent text-white">Full-Stack Web Dev – Apna College</li>
+                        <li class="list-group-item bg-transparent text-white">Spring Boot – CodeMasters Academy</li>
+                        <li class="list-group-item bg-transparent text-white">API Testing – DevTest Labs</li>
+                        <li class="list-group-item bg-transparent text-white">Agile Testing & Automation</li>
+                        <li class="list-group-item bg-transparent text-white">GitHub for DevOps</li>
+                        <li class="list-group-item bg-transparent text-white">SQL Foundation – Microsoft</li>
+                        <li class="list-group-item bg-transparent text-white">Web Design – HTML & CSS</li>
+                        <li class="list-group-item bg-transparent text-white">MS Office Suite Certification</li>
+                    </ul>
+                </section>
+
+                <section id="contact" class="mb-5 animate-slide-in" style="animation-delay: 0.6s;">
+                    <h2 class="h2 fw-bold section-title pb-2 mb-4">Contact</h2>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> Sant Tukaram Nagar, Pimpri-Chinchwad, Pune — 411018</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +91-80809-29483</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> <a href="mailto:ss2727303@gmail.com" class="text-primary">ss2727303@gmail.com</a></li>
+                        <li class="mb-2"><i class="fab fa-github me-2"></i> <a href="https://github.com/sajidbaba1" target="_blank" rel="noopener noreferrer" class="text-primary">GitHub</a> · <i class="fab fa-linkedin me-2"></i> <a href="https://www.linkedin.com/in/sajid-shaikh-1a7300252" target="_blank" rel="noopener noreferrer"……
+
+System: I notice the response was cut off. I'll provide the complete, updated code for the portfolio, incorporating Bootstrap 5.3, removing Tailwind CSS, and enhancing the design with a sticky sidebar, smooth animations, and a modern, professional look. The artifact ID is reused as requested since this is an update to the previous artifact.
+
+<xaiArtifact artifact_id="5cda3d5b-34f3-4d10-b507-fe17493c4d26" artifact_version_id="19069a26-b562-44ea-b7a7-a0d66b21c7e1" title="index.html" contentType="text/html">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saj ventional Institute of Technology</strong><br />B.E. Computer Engineering — CGPA: 9.11
+                </div>
+                <div class="col-md-4">
+                    <div class="card glass-card p-4">
+                        <h3 class="h5 fw-semibold">Shri Chhatrapati Shivaji Mahavidyalaya</strong><br />12th — 81.33%
+                </div>
+                <div class="col-md-4">
+                    <div class="card glass-card p-4">
+                        <h3 class="h5 fw-semibold">New English School, Madewadgaon</strong><br />10th — 84.60%
+                </div>
+            </div>
         </section>
         
-        <section id="skills">
-            <h2 class="text-3xl font-bold border-b-4 border-blue-500 pb-2 mb-4">Key Skills</h2>
-            <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 list-disc list-inside">
-                <li>Java · Spring Boot · Hibernate · JPA</li>
-                <li>MySQL · MongoDB · REST API</li>
-                <li>HTML · CSS · JavaScript · React</li>
-                <li>Postman · Selenium · Git/GitHub</li>
-                <li>Python3 · JavaFX · Docker</li>
-                <li>Problem Solving · MVC · AWS</li>
+        <section id="internships" class="mb-5 animate-slide-in" style="animation-delay: 0.3s;">
+            <h2 class="h2 fw-bold section-title pb-2 mb-4">Internships</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card glass-card p-4">
+                        <h3 class="h5 fw-semibold">Gamma Prep</h3>
+                        <p class="text-muted"><em>Java Full-Stack Developer (May–Jun 2025)</em></p>
+                        <p>Developed full-stack applications using Java, Spring Boot, React, and integrated APIs with databases.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card glass-card p-4">
+                        <h3 class="h5 fw-semibold">Tech Octanet</h3>
+                        <p class="text-muted"><em>Java Developer (Dec–Feb 2025)</em></p>
+                        <p>Built backend modules with Java, focusing on file handling and JDBC white-box coding.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card glass-card p-4">
+                        <h3 class="h5 fw-semibold">CODTECH IT SOLUTIONS</h3>
+                        <p class="text-muted"><em>Full-Stack Developer (Dec–Jan 2025)</em></p>
+                        <p>Contributed to multithreading, streams, and seamless frontend-backend integration.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects" class="mb-5 animate-slide-in" style="animation-delay: 0.4s;">
+            <h2 class="h2 fw-bold section-title pb-2 mb-4">Projects</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card glass-card p-4">
+                        <h3 class="h5 fw-semibold">Employee Management System</h3>
+                        <p>Spring Boot · MySQL · REST API · Maven</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card glass-card p-4">
+                        <h3 class="h5 fw-semibold">Online Bookstore Web App</h3>
+                        <p>Spring Boot · Hibernate · MySQL</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card glass-card p-4">
+                        <h3 class="h5 fw-semibold">B2B Multivendor Web App</h3>
+                        <p><a href="https://github.com/sajidbaba1/B2B-E-Commeerce-Multivendor-Web-Application" target="_blank" rel="noopener noreferrer" class="text-primary">GitHub Repository</a></p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card glass-card p-4">
+                        <h3 class="h5 fw-semibold">Fictional University – Educational Web App</h3>
+                        <p>React.js · CSS · Educational Platform</p>
+                        <p><a href="https://precious-bombolone-f41eb5.netlify.app/" target="_blank" rel="noopener noreferrer" class="text-primary">Live Demo</a></p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card glass-card p-4">
+                        <h3 class="h5 fw-semibold">Student Management System</h3>
+                        <p><a href="https://github.com/sajidbaba1/Student-Management-System-plus" target="_blank" rel="noopener noreferrer" class="text-primary">GitHub Repository</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="certifications" class="mb-5 animate-slide-in" style="animation-delay: 0.5s;">
+            <h2 class="h2 fw-bold section-title pb-2 mb-4">Certifications</h2>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent text-white">Java 8 – DurgaSoft</li>
+                <li class="list-group-item bg-transparent text-white">Full-Stack Web Dev – Apna College</li>
+                <li class="list-group-item bg-transparent text-white">Spring Boot – CodeMasters Academy</li>
+                <li class="list-group-item bg-transparent text-white">API Testing – DevTest Labs</li>
+                <li class="list-group-item bg-transparent text-white">Agile Testing & Automation</li>
+                <li class="list-group-item bg-transparent text-white">GitHub for DevOps</li>
+                <li class="list-group-item bg-transparent text-white">SQL Foundation – Microsoft</li>
+                <li class="list-group-item bg-transparent text-white">Web Design – HTML & CSS</li>
+                <li class="list-group-item bg-transparent text-white">MS Office Suite Certification</li>
             </ul>
         </section>
         
-        <section id="education">
-            <h2 class="text-3xl font-bold border-b-4 border-blue-500 pb-2 mb-4">Education</h2>
-            <div class="space-y-4">
-                <div class="bg-gray-800 p-4 rounded shadow glass-card">
-                    <strong>Dr. D. Y. Patil Institute of Technology</strong><br />B.E. Computer Engineering — CGPA: 9.11
-                </div>
-                <div class="bg-gray-800 p-4 rounded shadow glass-card">
-                    <strong>Shri Chhatrapati Shivaji Mahavidyalaya</strong><br />12th — 81.33%
-                </div>
-                <div class="bg-gray-800 p-4 rounded shadow glass-card">
-                    <strong>New English School, Madewadgaon</strong><br />10th — 84.60%
-                </div>
-            </div>
-        </section>
-        
-        <section id="internships">
-            <h2 class="text-3xl font-bold border-b-4 border-blue-500 pb-2 mb-4">Internships</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-gray-800 p-5 rounded-lg shadow glass-card">
-                    <h3 class="text-xl font-semibold">Gamma Prep</h3>
-                    <p><em>Java Full‑Stack Developer (May–Jun 2025)</em></p>
-                    <p>Worked with Java, Spring Boot, React, API & DB integration.</p>
-                </div>
-                <div class="bg-gray-800 p-5 rounded-lg shadow glass-card">
-                    <h3 class="text-xl font-semibold">Tech Octanet</h3>
-                    <p><em>Java Developer (Dec–Feb 2025)</em></p>
-                    <p>Built backend modules, file handling, JDBC white-box coding.</p>
-                </div>
-                <div class="bg-gray-800 p-5 rounded-lg shadow glass-card">
-                    <h3 class="text-xl font-semibold">CODTECH IT SOLUTIONS</h3>
-                    <p><em>Full‑Stack Developer (Dec–Jan 2025)</em></p>
-                    <p>Worked on multithreading, streams, frontend integration.</p>
-                </div>
-            </div>
-        </section>
-        
-        <section id="projects">
-            <h2 class="text-3xl font-bold border-b-4 border-blue-500 pb-2 mb-4">Projects</h2>
-            <div class="space-y-4">
-                <div class="bg-gray-800 p-4 rounded shadow glass-card">
-                    <h3 class="text-lg font-semibold">Employee Management System</h3>
-                    <p>Spring Boot · MySQL · REST API · Maven</p>
-                </div>
-                <div class="bg-gray-800 p-4 rounded shadow glass-card">
-                    <h3 class="text-lg font-semibold">Online Bookstore Web App</h3>
-                    <p>Spring Boot · Hibernate · MySQL</p>
-                </div>
-                <div class="bg-gray-800 p-4 rounded shadow glass-card">
-                    <h3 class="text-lg font-semibold">B2B Multivendor Web App</h3>
-                    <a href="https://github.com/sajidbaba1/B2B-E-Commeerce-Multivendor-Web-Application" target="_blank"
-                        rel="noopener noreferrer" class="text-blue-400">GitHub Repository</a>
-                </div>
-                <div class="bg-gray-800 p-4 rounded shadow glass-card">
-                    <h3 class="text-lg font-semibold">Fictional University – Educational Web App</h3>
-                    <p>React.js · Tailwind CSS · Educational Platform</p>
-                    <a href="https://precious-bombolone-f41eb5.netlify.app/" target="_blank" rel="noopener noreferrer"
-                        class="text-blue-400">
-                        Live Demo
-                    </a>
-                </div>
-        
-                <div class="bg-gray-800 p-4 rounded shadow glass-card">
-                    <h3 class="text-lg font-semibold">Student Management System</h3>
-                    <a href="https://github.com/sajidbaba1/Student-Management-System-plus" target="_blank"
-                        rel="noopener noreferrer" class="text-blue-400">GitHub
-                        Repository</a>
-                </div>
-            </div>
-        </section>
-        
-        <section id="certifications">
-            <h2 class="text-3xl font-bold border-b-4 border-blue-500 pb-2 mb-4">Certifications</h2>
-            <ul class="list-disc list-inside space-y-2">
-                <li>Java 8 – DurgaSoft</li>
-                <li>Full‑Stack Web Dev – Apna College</li>
-                <li>Spring Boot – CodeMasters Academy</li>
-                <li>API Testing – DevTest Labs</li>
-                <li>Agile Testing & Automation</li>
-                <li>GitHub for DevOps</li>
-                <li>SQL Foundation – Microsoft</li>
-                <li>Web Design – HTML & CSS</li>
-                <li>MS Office Suite Certification</li>
-        
+        <section id="contact" class="mb-5 animate-slide-in" style="animation-delay: 0.6s;">
+            <h2 class="h2 fw-bold section-title pb-2 mb-4">Contact</h2>
+            <ul class="list-unstyled">
+                <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> Sant Tukaram Nagar, Pimpri-Chinchwad, Pune — 411018</li>
+                <li class="mb-2"><i class="fas fa-phone me-2"></i> +91-80809-29483</li>
+                <li class="mb-2"><i class="fas fa-envelope me-2"></i> <a href="mailto:ss2727303@gmail.com" class="text-primary">ss2727303@gmail.com</a></li>
+                <li class="mb-2"><i class="fab fa-github me-2"></i> <a href="https://github.com/sajidbaba1" target="_blank" rel="noopener noreferrer" class="text-primary">GitHub</a> · <i class="fab fa-linkedin me-2"></i> <a href="https://www.linkedin.com/in/sajid-shaikh-1a7300252" target="_blank" rel="noopener noreferrer" class="text-primary">LinkedIn</a></li>
             </ul>
-        </section>
-        
-        <section id="contact">
-            <h2 class="text-3xl font-bold border-b-4 border-blue-500 pb-2 mb-4">Contact</h2>
-            <p class="mb-1">📍 Sant Tukaram Nagar, Pimpri‑Chinchwad, Pune — 411018</p>
-            <p class="mb-1">📞 +91‑80809‑29483</p>
-            <p class="mb-1">📧 <a href="mailto:ss2727303@gmail.com" class="text-blue-400">ss2727303@gmail.com</a></p>
-            <p class="mb-1">🔗 <a href="https://github.com/sajidbaba1" target="_blank" rel="noopener noreferrer"
-                    class="text-blue-400">GitHub</a> · <a href="https://www.linkedin.com/in/sajid-shaikh-1a7300252"
-                    target="_blank" rel="noopener noreferrer" class="text-blue-400">LinkedIn</a></p>
         </section>
     </main>
+</div>
 
-    <footer class="text-center py-6 bg-slate-950 text-sm text-gray-400">
-        &copy; 2025 Sajid Alimahamad Shaikh. All rights reserved.
-    </footer>
+<footer class="text-center py-4 bg-dark text-light">
+    <p>© 2025 Sajid Alimahamad Shaikh. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGDLPd6xSrG7O6t5fZehnN3I2o6yK" crossorigin="anonymous"></script>
 <script>
     document.querySelectorAll('.sound-vibrate').forEach(el => {
-        el.addEventListener('click', e => {
+        el.addEventListener('click', () => {
             const clickSound = document.getElementById('clickSound');
-            if (clickSound) {
-                clickSound.play().catch(() => {}); // Handle autoplay restrictions silently
-            }
-            if (navigator.vibrate) {
-                navigator.vibrate(100);
-            }
-            // No `e.preventDefault()` here — allow navigation
+            if (clickSound) clickSound.play();
+            if (navigator.vibrate) navigator.vibrate(100);
+        });
+    });
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            targetSection.scrollIntoView({ behavior: 'smooth' });
         });
     });
 </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
